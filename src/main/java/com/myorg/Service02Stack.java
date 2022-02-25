@@ -49,7 +49,6 @@ public class Service02Stack extends Stack {
         envVariables.put("AWS_REGION", "us-east-1");
         envVariables.put("AWS_SQS_QUEUE_PRODUCT_EVENTS_NAME", productEventsQueue.getQueueName());
 
-
         ApplicationLoadBalancedFargateService service02 = ApplicationLoadBalancedFargateService.Builder.create(this, "ALB02")
                 .serviceName("service-02")
                 .cluster(cluster)
@@ -60,7 +59,7 @@ public class Service02Stack extends Stack {
                 .taskImageOptions(
                         ApplicationLoadBalancedTaskImageOptions.builder()
                                 .containerName("aws_project02")
-                                .image(ContainerImage.fromRegistry("siecola/curso_aws_project02:1.4.0"))
+                                .image(ContainerImage.fromRegistry("jfmgalvao/curso_aws_project02:1.0.0"))
                                 .containerPort(9090)
                                 .logDriver(LogDriver.awsLogs(AwsLogDriverProps.builder()
                                         .logGroup(LogGroup.Builder.create(this, "Service02LogGroup")

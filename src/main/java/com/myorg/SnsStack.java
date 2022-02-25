@@ -22,8 +22,7 @@ public class SnsStack extends Stack {
                 .build())
                 .build();
 
-        //TODO - remover essa inscrição
-        productEventsTopic.getTopic().addSubscription(EmailSubscription.Builder.create("siecola@gmail.com")
+        productEventsTopic.getTopic().addSubscription(EmailSubscription.Builder.create("jfelipe16@gmail.com")
                 .json(true)
                 .build());
 
